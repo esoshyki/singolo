@@ -300,11 +300,25 @@ section.slider {
 .left-arrow-container {
   grid-column: 1;
   background: url('./assets/left_arrow.png') no-repeat center;
+  background-position-x: 40px;
+  transition-duration: 0.2s;
+}
+
+.left-arrow-container:hover {
+  background-position-x: 30px;
+  cursor: pointer;
 }
 
 .right-arrow-container {
   grid-column: 3;
   background: url('./assets/right_arrow.png') no-repeat center;
+  background-position-x: 40px;
+  transition-duration: 0.2s;
+}
+
+.right-arrow-container:hover {
+  background-position-x: 50px;
+  cursor: pointer;
 }
 
 /*   **********   **********   ********      ***      ***   ***   **********   **********   **********
