@@ -1,6 +1,8 @@
 :root {
   --brown: #2D303A;
-  --pink: #F06C64
+  --pink: #F06C64;
+  --almost-white: #F2F2F2;
+  --text-color: #666D89
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
@@ -12,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -107,7 +110,7 @@ section.slider {
   background: var(--pink);
   position: relative;
   z-index: 1;
-  height: 660px;
+  height: 600px;
 }
 
 .slider__phone-image{
@@ -287,7 +290,7 @@ section.slider {
 
 .slider-buttons {
   position: absolute;
-  top: 243;
+  top: 243px;
   width: 100%;
   height: 100px;
   display: grid;
@@ -304,4 +307,110 @@ section.slider {
   background: url('./assets/right_arrow.png') no-repeat center;
 }
 
+/*   **********   **********   ********      ***      ***   ***   **********   **********   **********
+     ***    ***   ***    ***   ***   ***     ***      ***   ***   ***    ***   ***    ***   ***    *** 
+     ***          ***          ***    ***     ***    ***    ***   ***          ***    ***   ***
+     **********   ***          ***  ***       ***    ***    ***   ***          ******       **********
+     **********   *********    *** ***         ***  ***     ***   ***          ******              ***
+            ***   ***          ***   ***       ***  ***     ***   ***    ***   ***                 ***
+     ***    ***   ***    ***   ***     ***      ******      ***   ***    ***   ***    ***   ***    ***
+     **********   **********   ***     ***       ****       ***   **********   **********   **********
+     
+*/
 
+section.services {
+  background-color: var(--almost-white);
+  color: var(--text-color);
+  font-family: 'Lato', sans-serif;
+}
+
+.services__head-info {
+  padding: 36px 40px 10px 40px;
+}
+
+
+
+.section-header {
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.services__head-info p {
+  letter-spacing: 0.4px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-top: -8px;
+}
+
+.services__info-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+.services__info-cards__card {
+  width: 320px;
+  height: 90px;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.services__info-cards__card h5 {
+  position: absolute;
+  margin: 0;
+  left: 91px;
+  top: 15px;
+  font-size: 17px
+}
+
+.services__info-cards__card p {
+  position: absolute;
+  margin: 0;
+  left: 91px;
+  top: 45px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.services__info-cards__card .__logo {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--text-color);
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 11px;
+  background-position-y: 12px;
+}
+
+.services__info-cards__card:nth-child(1) .__logo {
+  background-image: url(./assets/services/pen.png);
+}
+
+.services__info-cards__card:nth-child(2) .__logo {
+  background-image: url(./assets/services/blub.png);
+  background-position-x: 15px;
+}
+
+.services__info-cards__card:nth-child(3) .__logo {
+  background-image: url(./assets/services/heart.png);
+  background-position-y: 15px;
+}
+
+.services__info-cards__card:nth-child(4) .__logo {
+  background-image: url(./assets/services/phone.png);
+  background-position-x: 16px;
+}
+
+.services__info-cards__card:nth-child(5) .__logo {
+  background-image: url(./assets/services/bubble.png);
+}
+
+.services__info-cards__card:nth-child(6) .__logo {
+  background-image: url(./assets/services/star.png);
+}
