@@ -8,11 +8,26 @@
 body {
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .container {
   max-width: 1024px;
 }
+
+/*   ***    ***   **********       ***       ******       **********   *******
+     ***    ***   **********     *** ***     ***  ***     **********   ***  *** 
+     ***    ***   ***           ***   ***    ***   ***    ***          ***    ***
+     **********   **********   ***     ***   ***    ***   **********   ***   ***
+     **********   **********   ***********   ***    ***   **********   *******
+     ***    ***   ***          ***********   ***   ***    ***          ***  ***
+     ***    ***   **********   ***     ***   ***  ***     **********   ***   ***
+     ***    ***   **********   ***     ***   ******       **********   ***    ***
+     
+*/
 
 .header {
   display: flex;
@@ -38,8 +53,9 @@ body {
 }
 
 .header-navigation {
-  margin-left: 38%;
-  float: right;
+  width: 400px;
+  margin-left: 440px;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -52,10 +68,240 @@ body {
   text-decoration: none;
   font-size: 11.5px;
   color: #fff;
-  margin: 0 15px;
+  margin: 0 12px;
+  font-weight: 700;
 }
+
+.header-navigation_link::before {
+  position: relative;
+  right: 12px;
+  bottom: 3px;
+  color: gray;
+  content: '.';
+  font-size: 20px;
+}
+
+.header-navigation_link:first-child::before {
+  content: '';
+}
+
+ 
 
 .header-navigation_link:hover {
   cursor: pointer;
   color: var(--pink)
 }
+
+/*   **********   ***          ***********   ******       **********   *******
+     ***    ***   ***          **  ***  **   ***  ***     ***    ***   ***  *** 
+     ***          ***              ***       ***   ***    ***          ***    ***
+     **********   ***              ***       ***    ***   **********   ***   ***
+     **********   ***              ***       ***    ***   **********   *******
+            ***   ***              ***       ***   ***    ***          ***  ***
+     ***    ***   ***    ***   **  ***  **   ***  ***     ***    ***   ***   ***
+     **********   **********   ***********   ******       **********   ***    ***
+     
+*/
+
+section.slider {
+  background: var(--pink);
+  position: relative;
+  z-index: 1;
+  height: 660px;
+}
+
+.slider__phone-image{
+  position: relative;
+  background-size: cover;
+}
+
+.vertical-phone-image {
+  left: 111px;
+  top: 52px;
+  height: 485px;
+  width: 240px;
+}
+
+.horizontal-phone-image {
+  position: absolute;
+  left: 426px;
+  top: 173px;
+  height: 240px;
+  width: 485px;
+}
+
+.slider__phone-image__base {
+  position: absolute;
+  z-index: 2;
+}
+
+.vertical-base {
+  height: 459px;
+  width: 216px;
+  content: url('./assets/iPhone_Vertical/base.png');
+}
+
+.horizontal-base {
+  height: 216px;
+  width: 459px;
+  content: url('./assets/iPhone_Horizontal/base.png');
+}
+
+.slider__phone-image__screen {
+  position: absolute;
+  z-index: 3;
+  border: 2px solid #2D303A;
+}
+
+.vertical-screen {
+  width: 188px;
+  height: 333px;
+  left: 15px;
+  top: 65px;
+  background: url(./assets/iPhone_Vertical/screen.png);
+  background-position-x: 566px;
+  background-position-y: -134px;
+}
+
+.horizontal-screen {
+  width: 333px;
+  height: 188px;
+  left: 58px;
+  top: 13px;
+  background: url(./assets/iPhone_Horizontal/screen.png);
+  background-position-x: 454px;
+  background-position-y: -119px;
+}
+
+.slider__phone-image__cam {
+  position: relative;
+  z-index: 3;
+}
+
+.vertical-cam {
+  width: 11px;
+  height: 11px;
+  background: url(./assets/iPhone_Vertical/Cam/outer_circle.png);
+  top: 16px;
+  left: 103px
+}
+
+.horizontal-cam {
+  width: 11px;
+  height: 11px;
+  background: url(./assets/iPhone_Vertical/Cam/outer_circle.png);
+  top: 104px;
+  left: 430px
+}
+
+
+.slider__phone-image__cam__dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  background: url(./assets/iPhone_Vertical/Cam/red_dot.png);
+}
+
+.vertical-cam__dot {
+  top: 2px;
+  left: 2px;
+}
+
+.horizontal-cam__dot {
+  top: 2px;
+  left: 2px;
+}
+
+.slider__phone-image__speaker {
+  position: absolute;
+  z-index: 3;
+}
+
+.vertical-speaker {
+  top: 36px;
+  left: 91px;
+  width: 37px;
+  height: 6px;
+  background: url(./assets/iPhone_Vertical/speaker.png);
+}
+
+.horizontal-speaker {
+  top: 90px;
+  left: 415px;
+  width: 6px;
+  height: 37px;
+  background: url(./assets/iPhone_Horizontal/speaker.png);
+}
+
+.slider__phone-image__home-button {
+  position: absolute;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  background: url(./assets/iPhone_Vertical/Home_button/circle.png);
+}
+
+.vertical-home-button {
+  left: 86px;
+  top: 408px;
+}
+
+.horizontal-home-button {
+  left: 7px;
+  top: 86px;
+}
+
+.slider__phone-image__home-button__square {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: url(./assets/iPhone_Vertical/Home_button/square.png);
+}
+
+.vertical-home-button__square {
+  top: 12px;
+  left: 12px;
+}
+
+.horizontal-home-button__square {
+  top: 12px;
+  left: 12px;
+}
+
+.slider__phone-image__shadow {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.vertical-shadow {
+  height: 483px;
+  width: 240px;
+  content: url('./assets/iPhone_Vertical/shadow.png');
+}
+
+.horizontal-shadow {
+  height: 240px;
+  width: 483px;
+  content: url('./assets/iPhone_Horizontal/shadow.png');
+}
+
+.slider-buttons {
+  position: absolute;
+  top: 243;
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+.left-arrow-container {
+  grid-column: 1;
+  background: url('./assets/left_arrow.png') no-repeat center;
+}
+
+.right-arrow-container {
+  grid-column: 3;
+  background: url('./assets/right_arrow.png') no-repeat center;
+}
+
+
