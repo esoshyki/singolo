@@ -2,7 +2,13 @@
   --brown: #2D303A;
   --pink: #F06C64;
   --almost-white: #F2F2F2;
-  --text-color: #666D89
+  --text-color: #666D89;
+  --light-gray: #c8c8c8;
+  --border-color: #323746
+}
+
+* {
+  box-sizing: border-box
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
@@ -33,22 +39,29 @@ body {
 */
 
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-items: space-between;
-  align-items: center;
-  padding: 20px 40px 24px 40px;
+  position: relative;
   background: var(--brown);
   font-family: 'Lato', sans-serif;
+  min-height: 95px;
+  border: 7px solid var(--border-color);
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 
 .header-logo {
+  position: absolute;
+  top: 21px;
+  left: 39px;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 25px;
   line-height: 20px;
-  font-weight: 600;
+  letter-spacing: -1px;
+  margin-top: 13px;
+  font-weight: 500;
 }
+
 
 .header-logo::after {
   content: '*';
@@ -56,9 +69,10 @@ body {
 }
 
 .header-navigation {
+  float: right;
   width: 400px;
-  margin-left: 440px;
-  margin-bottom: 5px;
+  margin-right: 27px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -67,14 +81,37 @@ body {
 
 .header-navigation_link {
   position: relative;
-  top: 5px;
+  top: 6px;
   text-decoration: none;
   font-size: 11.5px;
   color: #fff;
   margin: 0 12px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
+.header-navigation_link:nth-child(1) {
+  letter-spacing: 0.4px;
+}
+
+.header-navigation_link:nth-child(2) {
+  letter-spacing: -0.4px;
+}
+
+.header-navigation_link:nth-child(3) {
+  letter-spacing: -0.2px;
+}
+
+.header-navigation_link:nth-child(4) {
+  letter-spacing: -0.2px;
+  left: 3px;
+}
+
+.header-navigation_link:nth-child(5) {
+  letter-spacing: 0px;
+  left: 5px;
+}
+ 
 .header-navigation_link::before {
   position: relative;
   right: 12px;
@@ -121,15 +158,15 @@ section.slider {
 .vertical-phone-image {
   left: 111px;
   top: 52px;
-  height: 485px;
-  width: 240px;
+  height: 484px;
+  width: 241px;
 }
 
 .horizontal-phone-image {
   position: absolute;
-  left: 426px;
+  left: 424px;
   top: 173px;
-  height: 240px;
+  height: 241px;
   width: 485px;
 }
 
@@ -139,6 +176,9 @@ section.slider {
 }
 
 .vertical-base {
+  position: relative;
+  top: 1px;
+  left: 1px;
   height: 459px;
   width: 216px;
   content: url('./assets/iPhone_Vertical/base.png');
@@ -147,32 +187,34 @@ section.slider {
 .horizontal-base {
   height: 216px;
   width: 459px;
+  left: 1px;
+  top: 1px;
   content: url('./assets/iPhone_Horizontal/base.png');
 }
 
 .slider__phone-image__screen {
   position: absolute;
   z-index: 3;
-  border: 2px solid #2D303A;
+  border: 3px solid var(--light-gray);
 }
 
 .vertical-screen {
-  width: 188px;
-  height: 333px;
-  left: 15px;
-  top: 65px;
+  width: 194px;
+  height: 339px;
+  left: 12px;
+  top: 63px;
   background: url(./assets/iPhone_Vertical/screen.png);
   background-position-x: 566px;
-  background-position-y: -134px;
+  background-position-y: -135px;
 }
 
 .horizontal-screen {
-  width: 333px;
-  height: 188px;
+  width: 339px;
+  height: 194px;
   left: 58px;
-  top: 13px;
+  top: 12px;
   background: url(./assets/iPhone_Horizontal/screen.png);
-  background-position-x: 454px;
+  background-position-x: 455px;
   background-position-y: -119px;
 }
 
@@ -182,6 +224,7 @@ section.slider {
 }
 
 .vertical-cam {
+  position: absolute;
   width: 11px;
   height: 11px;
   background: url(./assets/iPhone_Vertical/Cam/outer_circle.png);
@@ -194,7 +237,7 @@ section.slider {
   height: 11px;
   background: url(./assets/iPhone_Vertical/Cam/outer_circle.png);
   top: 104px;
-  left: 430px
+  left: 433px
 }
 
 
@@ -230,7 +273,7 @@ section.slider {
 
 .horizontal-speaker {
   top: 90px;
-  left: 415px;
+  left: 418px;
   width: 6px;
   height: 37px;
   background: url(./assets/iPhone_Horizontal/speaker.png);
@@ -245,13 +288,13 @@ section.slider {
 }
 
 .vertical-home-button {
-  left: 86px;
+  left: 88px;
   top: 408px;
 }
 
 .horizontal-home-button {
-  left: 7px;
-  top: 86px;
+  left: 8px;
+  top: 87px;
 }
 
 .slider__phone-image__home-button__square {
@@ -262,13 +305,13 @@ section.slider {
 }
 
 .vertical-home-button__square {
-  top: 12px;
-  left: 12px;
+  top: 13px;
+  left: 13px;
 }
 
 .horizontal-home-button__square {
-  top: 12px;
-  left: 12px;
+  top: 13px;
+  left: 13px;
 }
 
 .slider__phone-image__shadow {
@@ -277,12 +320,16 @@ section.slider {
 }
 
 .vertical-shadow {
+  top: 1px;
+  left: 1px;
   height: 483px;
   width: 240px;
   content: url('./assets/iPhone_Vertical/shadow.png');
 }
 
 .horizontal-shadow {
+  left: 1px;
+  top: 1px;
   height: 240px;
   width: 483px;
   content: url('./assets/iPhone_Horizontal/shadow.png');
@@ -300,7 +347,7 @@ section.slider {
 .left-arrow-container {
   grid-column: 1;
   background: url('./assets/left_arrow.png') no-repeat center;
-  background-position-x: 40px;
+  background-position-x: 42px;
   transition-duration: 0.2s;
 }
 
@@ -339,7 +386,7 @@ section.services {
 }
 
 .services__head-info {
-  padding: 36px 40px 10px 40px;
+  padding: 37px 40px 10px 40px;
 }
 
 
@@ -351,18 +398,22 @@ section.services {
 }
 
 .services__head-info p {
-  letter-spacing: 0.4px;
+  text-align: justify;
+  margin-top: -5px;
+  letter-spacing: 0.2px;
+  word-spacing: -1px;
   font-size: 17px;
   font-weight: 400;
   line-height: 30px;
   margin-top: -8px;
+  padding-right: 6px;
 }
 
 .services__info-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 30px;
+  padding: 2px 30px;
 }
 
 .services__info-cards__card {
@@ -387,14 +438,16 @@ section.services {
   top: 45px;
   font-size: 12px;
   line-height: 20px;
+  text-align: justify;
+  padding: 0 5px 0 0;
 }
 
 .services__info-cards__card .__logo {
   position: absolute;
   top: 17px;
   left: 10px;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border: 2px solid var(--text-color);
   border-radius: 30px;
   background-repeat: no-repeat;
@@ -404,16 +457,18 @@ section.services {
 
 .services__info-cards__card:nth-child(1) .__logo {
   background-image: url(./assets/services/pen.png);
+  background-position-y: 12px;
+  background-position-x: 12px;
 }
 
 .services__info-cards__card:nth-child(2) .__logo {
   background-image: url(./assets/services/blub.png);
-  background-position-x: 15px;
+  background-position-x: 17px;
 }
 
 .services__info-cards__card:nth-child(3) .__logo {
   background-image: url(./assets/services/heart.png);
-  background-position-y: 15px;
+  background-position-y: 16px;
 }
 
 .services__info-cards__card:nth-child(4) .__logo {
